@@ -37,6 +37,20 @@
   object-fit: cover !important;
   object-position: center top !important;
 }
+
+/* 修复轮播作品区（首页特色作品板 + 灯箱弹窗）封面黑边：强制 cover 铺满 */
+.works-feature-board-item img,
+.lightbox-media {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+.lightbox-media,
+.lightbox-stage,
+.lightbox-image-wrap {
+  background: #232323 !important;
+}
+
 </style>
   <!-- 首屏封面预加载，加快首屏出图 -->
   <link rel="preload" as="image" href="assets/auspicious_horse.jpg" fetchpriority="high">
