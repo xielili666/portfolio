@@ -45,6 +45,23 @@
   <link rel="preload" as="image" href="assets/dianshu_renderman_cover.jpg" fetchpriority="high">
   <link rel="preload" as="image" href="assets/fending_cover.jpg" fetchpriority="high">
   <link rel="preload" as="image" href="assets/infoflow_baixunjia_cover.jpg" fetchpriority="high">
+/* ===== 修复：灯箱(轮播区)与特色作品板 中深色工作流截图的黑边 =====
+   工作流封面为深灰 ComfyUI 截图(边缘 rgb(35,35,35))，在浅米色框里会显出黑边。
+   灯箱：舞台/图片背景与图片边缘同色，黑边融入不可见，整图仍完整可见；
+   特色作品板：沿用卡片修复，铺满容器 + 同色背景。 */
+.lightbox-stage:has(img.lightbox-media[src*="workflow"]) {
+  background: #232323;
+}
+.lightbox-image-wrap:has(img.lightbox-media[src*="workflow"]) {
+  background: #232323;
+}
+.lightbox-media[src*="workflow"] {
+  background: #232323;
+}
+.works-feature-board-item img[src*="workflow"] {
+  object-fit: cover !important;
+  background: #232323;
+}
 </head>
 <body>
 <div id="root"></div>
