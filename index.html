@@ -9,177 +9,24 @@
 
 </style>
 
-<style>
-/* 浣滃搧鍥剧墖缁熶竴澶勭悊锛氭寜鍘熷浘瀹介珮姣斿睍绀恒€佷笉鎷変几鍙樺舰銆佷笉鍔犺竟妗嗐€佷笉瓒呭ぇ */
-.works-feature-overlay img,
-.works-feature-cover img,
-.works-feature-board-item img,
-.works-feature-board--pair img,
-.works-feature-board--quad img,
-.works-feature-board--triple img,
-.works-feature-board--octa img,
-.business-gallery img,
-.business-thumb img,
-.lightbox-image-wrap img,
-.mt-doc-media img {
-    border-radius: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-.works-feature-cover,
-.works-feature-board-item,
-.works-feature-board--pair,
-.works-feature-board--quad,
-.works-feature-board--triple,
-.works-feature-board--octa {
-    width: auto !important;
-    max-width: 100% !important;
-}
-.works-feature-cover-media img,
-.works-feature-board-item img {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    object-position: center;
-    margin: 0 auto;
-}
-.business-gallery img,
-.business-thumb img {
-    width: auto !important;
-    height: auto !important;
-    max-width: 100% !important;
-    max-height: 55px !important;
-    object-fit: contain !important;
-}
-.mt-doc-media img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    object-fit: contain !important;
-}
-</style>
 
 <style>
-/* 浣滃搧鍥剧墖缁熶竴澶勭悊锛氭寜鍘熷浘瀹介珮姣斿睍绀恒€佷笉鎷変几鍙樺舰銆佷笉鍔犺竟妗嗐€佷笉瓒呭ぇ */
-.works-feature-overlay img,
-.works-feature-cover img,
-.works-feature-board-item img,
-.works-feature-board--pair img,
-.works-feature-board--quad img,
-.works-feature-board--triple img,
-.works-feature-board--octa img,
-.business-gallery img,
-.business-thumb img,
-.lightbox-image-wrap img,
-.mt-doc-media img {
-    border-radius: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-.works-feature-cover,
-.works-feature-board-item,
-.works-feature-board--pair,
-.works-feature-board--quad,
-.works-feature-board--triple,
-.works-feature-board--octa {
-    width: auto !important;
-    max-width: 100% !important;
-}
-.works-feature-cover-media img,
-.works-feature-board-item img {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    object-position: center;
-    margin: 0 auto;
-}
-.business-gallery img,
-.business-thumb img {
-    width: auto !important;
-    height: auto !important;
-    max-width: 100% !important;
-    max-height: 55px !important;
-    object-fit: contain !important;
-}
-.mt-doc-media img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    object-fit: contain !important;
-}
-</style>
-<style>
-/* AI商业设计展板图片：按原始比例展示，限高不过大，防止横向溢出 */
-.works-feature-board,
-.works-feature-board--pair,
-.works-feature-board--quad,
-.works-feature-board--triple,
-.works-feature-board--octa {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-.works-feature-board-item,
-.works-feature-cover-media {
-  overflow: hidden !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-.works-feature-board-item img,
-.works-feature-cover-media img {
-  display: block !important;
-  width: auto !important;
-  max-width: 100% !important;
-  height: auto !important;
-  max-height: 55vh !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  margin: 0 auto !important;
-  border-radius: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-</style>
-<style>
-/* octa/pair布局覆盖：图片等比填充容器、无黑边 */
-.works-feature-board--octa .works-feature-board-item,
-.works-feature-board--pair .works-feature-board-item {
-    overflow: hidden !important;
-    background: #fbf7f2 !important;
-}
-.works-feature-board--octa .works-feature-board-item img,
-.works-feature-board--pair .works-feature-board-item img {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: none !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    transform: scale(1.06) !important;
-}
-</style>
-<style>
-/* 修复 AI 工作流卡片封面黑边/浅底问题：深色 ComfyUI 截图铺满容器，背景与截图边缘融合 */
-.card-media:has(img[src*="workflow_ui"]) {
+/* 统一修复项目卡片封面黑边/暗边：16:9 容器 + cover 铺满，避免图片暗边露出浅色背景 */
+.card-media:not(.media-info):not(.media-video):not(.media-compare) {
   aspect-ratio: 16 / 9 !important;
-  background: #232323 !important;
+  background: #efe7df !important;
 }
-.card-media:has(img[src*="workflow_ui"]) img {
+.card-media:not(.media-info):not(.media-video):not(.media-compare) img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  object-position: center !important;
+}
+/* AI 工作流封面本身是深色 ComfyUI 截图，背景与边缘融合、保留顶部节点 */
+.card-media:has(img[src*="workflow_ui"]) {
+  background: #232323 !important;
+}
+.card-media:has(img[src*="workflow_ui"]) img {
   object-position: center top !important;
 }
 /* 详情页工作流展示区域同步处理 */
@@ -187,8 +34,6 @@
   background: #232323 !important;
 }
 .workflow-media:has(img[src*="workflow_ui"]) img {
-  width: 100% !important;
-  height: 100% !important;
   object-fit: cover !important;
   object-position: center top !important;
 }
