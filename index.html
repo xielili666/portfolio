@@ -170,6 +170,29 @@
     transform: scale(1.06) !important;
 }
 </style>
+<style>
+/* 修复 AI 工作流卡片封面黑边/浅底问题：深色 ComfyUI 截图铺满容器，背景与截图边缘融合 */
+.card-media:has(img[src*="workflow_ui"]) {
+  aspect-ratio: 16 / 9 !important;
+  background: #232323 !important;
+}
+.card-media:has(img[src*="workflow_ui"]) img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+/* 详情页工作流展示区域同步处理 */
+.workflow-media:has(img[src*="workflow_ui"]) {
+  background: #232323 !important;
+}
+.workflow-media:has(img[src*="workflow_ui"]) img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+</style>
 </head>
 <body>
 <div id="root"></div>
