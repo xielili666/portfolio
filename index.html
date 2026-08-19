@@ -171,23 +171,34 @@
     object-position: center !important;
     transform: scale(1.06) !important;
 	}
-/* 轮播图片修复：作品展示完全、无黑边、无卡顿 */
-.mt-doc {
+/* 轮播修复：无边框、完整展示作品、无卡顿 */
+div.mt-doc[class*="mt-doc"] {
     background: #ffffff !important;
-    border: none !important;
+    border: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: 0 !important;
     box-shadow: none !important;
 }
-.mt-doc--wide .mt-doc-media {
-    background: #fbf7f2 !important;
+div.mt-doc[class*="mt-doc"]:hover {
+    border: 0 !important;
+    border-style: none !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
 }
-.mt-doc--wide .mt-doc-media img {
+div.mt-doc--wide[class*="mt-doc--wide"] .mt-doc-media {
+    background: #fbf7f2 !important;
+    border: 0 !important;
+}
+div.mt-doc--wide[class*="mt-doc--wide"] .mt-doc-media img {
     object-fit: contain !important;
     object-position: center !important;
     transform: none !important;
     border-radius: 12px !important;
+    border: 0 !important;
 }
 .mt-doc-media {
     background: #fbf7f2 !important;
+    border: 0 !important;
 }
 .mt-doc-media img {
     position: absolute !important;
@@ -200,6 +211,7 @@
     object-fit: contain !important;
     object-position: center !important;
     transform: none !important;
+    border: 0 !important;
 }
 </style>
 </head>
