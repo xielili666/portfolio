@@ -214,6 +214,39 @@ div.mt-doc--wide[class*="mt-doc--wide"] .mt-doc-media img {
     border: 0 !important;
 }
 </style>
+
+<!-- 轮播/作品封面去黑边：统一铺满容器，无留白/无黑边 -->
+<style id="carousel-cover-fix">
+/* 详情弹窗内的作品画廊（works-feature-board）：所有布局都铺满 */
+.works-feature-board-item{
+  background:#fbf7f2 !important;
+  overflow:hidden !important;
+  aspect-ratio:4 / 3;
+}
+.works-feature-board-item img{
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  max-height:none !important;
+  object-fit:cover !important;
+  object-position:center !important;
+}
+/* 弹窗顶部大封面：浅底，避免深图显黑边 */
+.works-feature-cover-media{
+  background:#fbf7f2 !important;
+  overflow:hidden !important;
+}
+/* 首页 hero 轮播卡片封面 */
+.mt-doc--wide .mt-doc-media{
+  background:#fbf7f2 !important;
+}
+.mt-doc--wide .mt-doc-media img{
+  object-fit:cover !important;
+  object-position:center !important;
+  border-radius:12px !important;
+}
+</style>
+
 </head>
 <body>
 <div id="root"></div>
