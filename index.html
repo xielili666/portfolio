@@ -1,129 +1,257 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>谢丽丽 · AIGC 视觉设计师</title>
+
 <style>
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:#fbf7f2;color:#432e27;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}img{max-width:100%;display:block}button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}a{color:inherit;text-decoration:none}.hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(160deg,#f5eee6 0%,#fbf7f2 40%,#f0e8e0 100%)}.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.15;pointer-events:none}.hero-content{position:relative;z-index:2;text-align:center;max-width:800px;padding:2rem}.hero-name{font-size:3.5rem;font-weight:700;color:#2e1a12;letter-spacing:.06em;margin-bottom:.5rem}.hero-tagline{font-size:1.4rem;color:#7a6657;letter-spacing:.3em;margin-bottom:1.5rem}.hero-desc{font-size:1.05rem;color:#8b7a6e;max-width:560px;margin:0 auto 2rem;line-height:1.8}.hero-btn{display:inline-block;padding:.9rem 2.8rem;background:#da6d6c;color:#fff;border-radius:40px;font-size:.95rem;font-weight:500;letter-spacing:.08em;transition:background .3s,transform .3s}.hero-btn:hover{background:#c45a59;transform:translateY(-2px)}.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}.nav.scrolled{background:#fbf7f2;box-shadow:0 1px 12px rgba(0,0,0,.06)}.nav-logo{font-size:1.1rem;font-weight:600;color:#2e1a12;letter-spacing:.04em}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{color:#7a6657;font-size:.9rem;letter-spacing:.06em;transition:color .3s}.nav-links a:hover{color:#2e1a12}.nav-toggle{display:none;flex-direction:column;gap:5px;padding:4px}.nav-toggle span{display:block;width:24px;height:2px;background:#2e1a12;border-radius:2px;transition:transform .3s}.section{padding:6rem 2rem;max-width:1200px;margin:0 auto}.section-header{text-align:center;margin-bottom:3rem}.section-tag{display:inline-block;color:#da6d6c;font-size:.8rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem}.section-header h2{font-size:2.2rem;color:#2e1a12;font-weight:700;letter-spacing:.04em}.cat-tabs{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:2.5rem}.cat-tab{padding:.5rem 1.2rem;border-radius:20px;font-size:.85rem;color:#7a6657;background:transparent;border:1px solid #e0d5cc;transition:all .3s}.cat-tab.active,.cat-tab:hover{background:#da6d6c;color:#fff;border-color:#da6d6c}.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s;cursor:pointer}.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08)}.card-media{position:relative;overflow:hidden;background:#f5eee6;aspect-ratio:16/10}.card-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.card:hover .card-media img{transform:scale(1.05)}.card-chip{position:absolute;top:10px;left:10px;padding:3px 10px;background:rgba(0,0,0,.5);color:#fff;font-size:.75rem;border-radius:12px;backdrop-filter:blur(4px)}.card-zoom{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);opacity:0;transition:opacity .3s;color:#fff;font-size:.85rem;letter-spacing:.08em}.card:hover .card-zoom{opacity:1}.card-body{padding:1rem 1.2rem 1.2rem}.card-subtitle{font-size:.78rem;color:#b09684;letter-spacing:.06em}.card-body h3{font-size:1.05rem;color:#2e1a12;margin:.3rem 0 .4rem;font-weight:600}.card-body p{font-size:.85rem;color:#8b7a6e;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.card-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem}.card-tags span{font-size:.72rem;color:#b09684;background:#f5eee6;padding:2px 8px;border-radius:8px}.cat-empty{text-align:center;color:#b09684;padding:3rem;font-size:.95rem}.footer-section{background:#2e1a12;color:#f5eee6;padding:4rem 2rem 2rem}.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem}.footer-tag{display:inline-block;color:#da6d6c;font-size:.8rem;font-weight:600;letter-spacing:.15em;margin-bottom:.5rem}.footer-inner h2{font-size:1.8rem;margin-bottom:1rem;line-height:1.3}.footer-quote{font-size:1.05rem;color:#c4b5a8;line-height:1.7;margin-bottom:1rem}.footer-designer{font-size:.9rem;color:#da6d6c;letter-spacing:.1em}.footer-contact h3{font-size:1.1rem;margin-bottom:1rem;color:#f5eee6}.footer-contact ul{list-style:none;display:flex;flex-direction:column;gap:.8rem}.footer-contact li{font-size:.9rem;color:#c4b5a8}.footer-contact li span{display:block;font-size:.75rem;color:#8b7a6e;margin-bottom:2px}.footer-copy{text-align:center;color:#7a6657;font-size:.82rem;padding-top:2rem;margin-top:3rem;border-top:1px solid rgba(255,255,255,.06)}.preloader{position:fixed;top:0;right:0;bottom:0;left:0;z-index:9999;background:#fbf7f2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem}.preloader-ring{width:70px;height:70px;display:flex;align-items:center;justify-content:center}.preloader-svg{width:100%;height:100%;transform:rotate(-90deg)}.preloader-arc{animation:preloader-rotate 1.1s linear infinite;transform-origin:50% 50%}@keyframes preloader-rotate{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.preloader-name{font-size:18px;color:#8b7355;letter-spacing:.2em}.about-content{max-width:700px;margin:0 auto;text-align:center}.about-content p{color:#7a6657;line-height:1.8;margin-bottom:1rem;font-size:1rem}.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}.results .section-header{text-align:center}.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:2rem}.modal-panel{background:#fbf7f2;border-radius:20px;max-width:900px;width:100%;max-height:85vh;overflow-y:auto;padding:2rem;position:relative}.modal-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#f0e8e0;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#7a6657;transition:background .3s}.modal-close:hover{background:#e0d5cc}.modal-title{font-size:1.5rem;color:#2e1a12;margin-bottom:.5rem}.modal-subtitle{font-size:.85rem;color:#b09684;margin-bottom:1rem}.modal-desc{color:#7a6657;font-size:.95rem;line-height:1.7;margin-bottom:1.5rem}.modal-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-top:1.5rem}.modal-gallery img{width:100%;border-radius:12px;object-fit:cover}.modal-gallery--pair{grid-template-columns:1fr 1fr}.modal-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}.modal-compare figure{position:relative}.modal-compare img{width:100%;border-radius:12px;object-fit:cover}.modal-compare figcaption{position:absolute;top:8px;left:8px;padding:2px 8px;background:rgba(0,0,0,.5);color:#fff;font-size:.72rem;border-radius:6px;backdrop-filter:blur(4px)}.compare-video{display:flex;gap:1rem;margin-bottom:1.5rem}.compare-video video{width:50%;border-radius:12px;object-fit:contain;background:#000}.mt-carousel{position:relative;overflow:hidden;--doc-w:220px;--doc-h:320px;--gap:60px;height:520px;max-width:1200px;margin:2rem auto 0}.mt-track{display:flex;gap:var(--gap);animation:mtMarquee 28s linear infinite;width:max-content;padding:0 2rem}.mt-track:hover{animation-play-state:paused}.mt-card{flex:0 0 var(--doc-w);height:var(--doc-h);background:#fff;border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;cursor:pointer}.mt-card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,.1)}.mt-card-img{flex:1;border-radius:12px;overflow:hidden;background:#f5eee6}.mt-card-img img{width:100%;height:100%;object-fit:cover;border-radius:12px}.mt-card-title{font-size:15px;font-weight:600;color:#2e1a12;line-height:1.25}.mt-card-tag{font-size:10px;font-weight:600;color:#fff;padding:3px 8px;border-radius:12px;letter-spacing:.04em;align-self:flex-start}.mt-fade-left,.mt-fade-right{position:absolute;top:0;bottom:0;width:100px;z-index:5;pointer-events:none}.mt-fade-left{left:0;background:linear-gradient(90deg,#fbf7f2 0%,transparent 100%)}.mt-fade-right{right:0;background:linear-gradient(270deg,#fbf7f2 0%,transparent 100%)}@keyframes mtMarquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.hero-vertical{display:flex;flex-direction:column;height:100vh;min-height:600px;background:linear-gradient(160deg,#f5eee6 0%,#fbf7f2 40%,#f0e8e0 100%);overflow:hidden;position:relative}.hero-vertical .hero-inner{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;position:relative;z-index:2}.hero-vertical .hero-content{text-align:center;max-width:700px;margin-bottom:2rem;margin-top:0}.hero-vertical .hero-name{font-size:3rem}.hero-vertical .hero-tagline{font-size:1.2rem}.hero-vertical .mt-carousel{height:360px;margin-top:0;width:100%}.hero-vertical .mt-carousel{--doc-w:200px;--doc-h:280px;--gap:44px;height:380px}.particles-canvas{position:absolute;inset:0;z-index:1;pointer-events:none}.works-feature-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:2rem}.works-feature-page{background:#fbf7f2;border-radius:20px;max-width:1000px;width:100%;max-height:88vh;overflow-y:auto;padding:2rem;position:relative}.works-feature-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#f0e8e0;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#7a6657;z-index:10;transition:background .3s}.works-feature-close:hover{background:#e0d5cc}.works-feature-cover{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;align-items:center}.works-feature-cover-media{background:#f0e8e0;border-radius:16px;overflow:hidden}.works-feature-cover-media img{width:100%;height:auto;max-height:45vh;object-fit:cover;display:block}.works-feature-eyebrow{font-size:.8rem;color:#b09684;letter-spacing:.1em;margin-bottom:.3rem;display:block}.works-feature-title{font-size:1.6rem;color:#2e1a12;margin-bottom:.5rem;line-height:1.3}.works-feature-desc{font-size:.95rem;color:#7a6657;line-height:1.7;margin-bottom:1rem}.works-feature-video{margin-bottom:1.5rem;border-radius:12px;overflow:hidden}.works-feature-video video{width:100%;display:block;background:#000;border-radius:12px}.works-feature-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}.works-feature-tab{padding:.4rem 1rem;border-radius:16px;font-size:.82rem;color:#7a6657;border:1px solid #e0d5cc;transition:all .3s}.works-feature-tab.active{background:#da6d6c;color:#fff;border-color:#da6d6c}.works-feature-board{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-bottom:1.5rem}.works-feature-board--pair{grid-template-columns:1fr 1fr}.works-feature-board--triple{grid-template-columns:repeat(3,1fr)}.works-feature-board--quad{grid-template-columns:repeat(2,1fr)}.works-feature-board--octa{grid-template-columns:repeat(4,1fr)}.works-feature-board-item{border-radius:12px;overflow:hidden;background:#f0e8e0}.works-feature-board-item img{width:100%;height:100%;object-fit:cover;display:block}.works-feature-meta{padding-top:1.5rem;border-top:1px solid #e0d5cc}.works-feature-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}.works-feature-tag{font-size:.78rem;color:#b09684;background:#f5eee6;padding:3px 10px;border-radius:12px}.works-feature-meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.works-feature-meta-item{text-align:center}.meta-label{font-size:.72rem;color:#b09684;display:block;margin-bottom:4px}.meta-value{font-size:.9rem;color:#7a6657;font-weight:500}.exhibition-board{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-bottom:1.5rem}.exhibition-board img{width:100%;border-radius:10px;object-fit:cover;display:block}.exhibition-detail{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem}.exhibition-detail .exhibition-text{display:flex;flex-direction:column;justify-content:center}.exhibition-detail .exhibition-text h2{font-size:1.5rem;color:#2e1a12;margin-bottom:.5rem}.exhibition-detail .exhibition-text p{font-size:.95rem;color:#7a6657;line-height:1.7}.exhibition-detail .exhibition-media{background:#f0e8e0;border-radius:16px;overflow:hidden}.exhibition-detail .exhibition-media img{width:100%;height:auto;max-height:50vh;object-fit:cover}.exhibition-board--pair{grid-template-columns:1fr 1fr}.exhibition-board--octa{grid-template-columns:repeat(4,1fr)}.exhibition-board--quad{grid-template-columns:repeat(2,1fr)}.exhibition-video{margin-bottom:1.5rem;border-radius:12px;overflow:hidden}.exhibition-video video{width:100%;display:block;background:#000;border-radius:12px}.works-feature-board-item{position:relative;overflow:hidden}.works-feature-board-item img{width:100%;display:block;object-fit:cover}.works-feature-board--pair .works-feature-board-item{aspect-ratio:auto}.works-feature-board--pair .works-feature-board-item img{height:auto;max-height:55vh;object-fit:contain}.works-feature-board--octa .works-feature-board-item{aspect-ratio:1/1}.works-feature-board--octa .works-feature-board-item img{height:100%;object-fit:cover;transform:scale(1.04)}@media(max-width:820px){.hero-name{font-size:2.5rem}.hero-tagline{font-size:1.1rem}.footer-inner{grid-template-columns:1fr}.nav-links{display:none}.nav-toggle{display:flex}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fbf7f2;padding:1rem 2rem;gap:1rem;box-shadow:0 4px 12px rgba(0,0,0,.06)}.works-feature-cover{grid-template-columns:1fr}.mt-carousel{--doc-w:170px;--doc-h:230px;height:340px}.hero-vertical .mt-carousel{--doc-w:170px;--doc-h:230px;--gap:30px;height:320px}.works-feature-meta-grid{grid-template-columns:1fr}.exhibition-detail{grid-template-columns:1fr}.works-feature-board--octa{grid-template-columns:repeat(2,1fr)}.modal-gallery{grid-template-columns:1fr}}@media(max-width:640px){.hero-name{font-size:2rem}.hero-tagline{font-size:1rem}.section{padding:4rem 1.2rem}.cards-grid{grid-template-columns:1fr}.mt-carousel{--doc-w:150px;--doc-h:200px;--gap:24px;height:280px}.hero-vertical .mt-carousel{--doc-w:150px;--doc-h:200px;--gap:22px;height:280px}.works-feature-board--pair{grid-template-columns:1fr}.works-feature-board--octa{grid-template-columns:1fr 1fr}.exhibition-board--pair{grid-template-columns:1fr}.exhibition-board--octa{grid-template-columns:1fr 1fr}}
+
 </style>
+
+
 
 <!-- 封面黑边统一修复：所有封面/画廊图片强制 cover 铺满，浅底，消除黑边/留白 -->
+
 <style id="cover-fix-v2">
+
 .mt-card-img,
+
 .works-feature-board-item,
+
 .works-feature-cover-media,
+
 .card-media,
+
 .modal-gallery,
+
 .exhibition-board,
+
 .exhibition-media{background:#f5eee6 !important;}
+
 .mt-card-img img,
+
 .works-feature-board-item img,
+
 .works-feature-cover-media img,
+
 .card-media img,
+
 .modal-gallery img,
+
 .exhibition-board img,
+
 .exhibition-media img{
+
   width:100% !important;height:100% !important;
+
   max-width:none !important;max-height:none !important;
+
   object-fit:cover !important;object-position:center !important;
+
 }
+
 .works-feature-board-item{aspect-ratio:4/3 !important;}
+
 .works-feature-board--pair .works-feature-board-item,
+
 .works-feature-board--quad .works-feature-board-item,
+
 .works-feature-board--octa .works-feature-board-item{aspect-ratio:4/3 !important;}
+
 .works-feature-board--pair .works-feature-board-item img,
+
 .works-feature-board--octa .works-feature-board-item img{
+
   height:100% !important;object-fit:cover !important;
+
 }
+
 </style>
 
+
+
 </head>
+
 <body>
+
 <div id="root"></div>
+
 <script>
+
 (function(){function e(){var n=performance.now();root.style.opacity=Math.min(1,(n-t)/600),n-t<600?requestAnimationFrame(e):(root.style.opacity="1",preloader.style.display="none")}var t=performance.now(),preloader=document.createElement("div");preloader.className="preloader",preloader.innerHTML='<div class="preloader-ring"><svg viewBox="0 0 100 100" class="preloader-svg"><circle cx="50" cy="50" r="42" fill="none" stroke="#F5EEE6" stroke-width="3"/><circle cx="50" cy="50" r="42" fill="none" stroke="#DA6D6C" stroke-width="3" stroke-linecap="round" stroke-dasharray="60 264" class="preloader-arc"/></svg></div><div class="preloader-name">谢丽丽 · 设计师</div>',document.body.appendChild(preloader);var root=document.getElementById("root");root.style.opacity="0",root.style.transition="opacity .6s ease",setTimeout(e,800);
 
+
+
 // Portfolio data
+
 var site={name:"谢丽丽",title:"AIGC 视觉设计师",tagline:"AI · 视觉 · 创意",desc:"用AI探索视觉表达的无限可能，专注于AIGC领域的设计实践与创新，融合技术与艺术，打造独特视觉体验。"};
+
 var about={heading:"关于我",content:"你好，我是谢丽丽，一名专注于AIGC领域的视觉设计师。我擅长将AI技术与传统视觉设计相结合，创造出独特而富有表现力的视觉作品。从平面设计到动态影像，从品牌视觉到商业插画，我不断探索AI在视觉创作中的可能性。"};
+
 var footer={heading:"期待与你合作",quote:"用AI拓展创意的边界，让视觉讲述动人的故事。",designer:site.name,contact:[{label:"邮箱",value:"xielili@example.com"},{label:"微信",value:"XieLiliDesign"},{label:"站酷",value:"xielili.zcool.com.cn"}]};
+
 var navLinks=[
+
 {href:"#works",label:"作品"},
+
 {href:"#about",label:"关于"},
+
 {href:"#footer",label:"联系"}
+
 ];
 
+
+
 // Updated color palette for tags
+
 var tagColors={};
+
 var tagPalette=["#da6d6c","#b48a78","#8ba5a0","#c49a8c","#a8b5a0","#d4a0a0","#8fa8b8","#c4a882"];
 
+
+
 // Works data
+
 	var works=[
+
 	{title:"金玉瑞兽",poetic:"金玉瑞兽",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/auspicious_horse.jpg",desc:"以中国传统瑞兽为主题，融合AI生成技术与东方美学，打造富有文化底蕴的商业视觉作品。",tags:["AI生成","商业设计","国潮"],images:["assets/auspicious_horse.jpg"],galleryLayout:"octa"},
+
 	{title:"珍珠甜心",poetic:"珍珠甜心",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/pearl_sweetie_board.jpg",desc:"甜美珍珠主题的AI商业设计，以柔和的色彩和精致的细节展现产品的独特魅力。",tags:["AI生成","商业设计","甜美"],images:["assets/pearl_sweetie_board.jpg"],galleryLayout:"pair"},
+
 	{title:"薄荷茉莉",poetic:"薄荷茉莉",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/mint_jasmine_board.jpg",desc:"清新薄荷与茉莉花香的视觉融合，AI创作的商业设计作品。",tags:["AI生成","商业设计","清新"],images:["assets/mint_jasmine_board.jpg"],galleryLayout:"pair"},
+
 	{title:"Stella Lulu",poetic:"Stella Lulu",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/stella_lulu_board.jpg",desc:"时尚品牌Stella Lulu的AI视觉设计，融合现代美学与品牌调性。",tags:["AI生成","品牌设计","时尚"],images:["assets/stella_lulu_board.jpg"],galleryLayout:"pair"},
+
 	{title:"佰迅家",poetic:"佰迅家",subtitle:"品牌视觉设计",category:"AI商业设计",cover:"assets/baixunjia_main.jpg",desc:"佰迅家品牌视觉设计，AI辅助生成的主视觉及TVC封面。",tags:["AI生成","品牌视觉","TVC"],images:["assets/baixunjia_main.jpg","assets/baixunjia_tvc_cover.jpg"],galleryLayout:"pair"},
+
 	{title:"电数 RenderMan",poetic:"电数 RenderMan",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/dianshu_renderman_cover.jpg",desc:"电数科技RenderMan项目的AI视觉设计，展现科技感与未来感。",tags:["AI生成","科技","品牌"],images:["assets/dianshu_renderman_cover.jpg"],galleryLayout:"quad"},
+
 	{title:"芬丁",poetic:"芬丁",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/fending_cover.jpg",desc:"芬丁品牌的AI视觉设计作品。",tags:["AI生成","品牌","商业"],images:["assets/fending_cover.jpg"],galleryLayout:"quad"},
+
 	{title:"梦西岚",poetic:"梦西岚",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/mengxilan_cover.jpg",desc:"梦西岚品牌视觉设计，融合梦幻与科技感的AI创作。",tags:["AI生成","品牌","梦幻"],images:["assets/mengxilan_cover.jpg","assets/mengxilan_storyboard_overview.jpg","assets/mengxilan_video_cover.jpg"],galleryLayout:"pair"},
+
 	{title:"薄荷糯糯",poetic:"薄荷糯糯",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/mint_nuonuo_cover.jpg",desc:"薄荷糯糯品牌的AI视觉设计。",tags:["AI生成","品牌","清新"],images:["assets/mint_nuonuo_cover.jpg"],galleryLayout:"quad"},
+
 	{title:"N7",poetic:"N7",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/n7_10.png",desc:"N7项目的AI视觉设计。",tags:["AI生成","商业","科技"],images:["assets/n7_10.png"],galleryLayout:"quad"},
+
 	{title:"Q figure",poetic:"Q figure",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/qfigure_01.jpg",desc:"Q figure人物形象的AI视觉设计。",tags:["AI生成","人物","卡通"],images:["assets/qfigure_01.jpg"],galleryLayout:"quad"},
+
 	{title:"千依维C",poetic:"千依维C",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/qianyi_vitamin_c_storyboard.jpg",desc:"千依维C品牌的分镜故事板设计。",tags:["AI生成","分镜","品牌"],images:["assets/qianyi_vitamin_c_storyboard.jpg"],galleryLayout:"quad"},
+
 	{title:"企业宣传",poetic:"企业宣传",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/qiye_cover.jpg",desc:"企业宣传视觉设计作品。",tags:["AI生成","企业","宣传"],images:["assets/qiye_cover.jpg"],galleryLayout:"quad"},
+
 	{title:"数字人",poetic:"数字人",subtitle:"AI 商业设计",category:"AI商业设计",cover:"assets/shuziren_cover.jpg",desc:"AI数字人视觉设计，探索虚拟与现实融合的视觉表达。",tags:["AI生成","数字人","虚拟"],images:["assets/shuziren_cover.jpg"],galleryLayout:"quad"},
+
 	{title:"文旅海报",poetic:"文旅海报",subtitle:"AI 平面设计",category:"AI平面设计",cover:"assets/wenlv_poster.jpg",desc:"文化旅游主题海报设计，AI辅助创意生成。",tags:["AI生成","海报","文旅"],images:["assets/wenlv_poster.jpg"],galleryLayout:"pair"},
+
 	{title:"工作流界面",poetic:"工作流界面",subtitle:"AI 平面设计",category:"AI平面设计",cover:"assets/s10_workflow_ui.png",desc:"AI相关工作流产品的UI界面设计。",tags:["AI生成","UI","工作流"],images:["assets/s10_workflow_ui.png","assets/s11_workflow_ui.png","assets/s12_workflow_ui.png"],galleryLayout:"pair"},
+
 	{title:"S14 系列",poetic:"S14 系列",subtitle:"AI 平面设计",category:"AI平面设计",cover:"assets/s14_1.png",desc:"S14系列视觉设计作品集。",tags:["AI生成","系列","创意"],images:["assets/s14_1.png","assets/s14_60.png","assets/s14_61.png","assets/s14_62.png","assets/s14_63.png"],galleryLayout:"pair"},
+
 	{title:"信息流",poetic:"信息流广告",subtitle:"AI 平面设计",category:"AI平面设计",cover:"assets/infoflow_baixunjia_cover.jpg",desc:"信息流广告创意设计，AI辅助生成多款广告视觉。",tags:["AI生成","信息流","广告"],images:["assets/infoflow_baixunjia_cover.jpg","assets/infoflow_bathtub_cover.jpg","assets/infoflow_beefpie_cover.jpg","assets/infoflow_spray_cover.jpg","assets/infoflow_vacuum_cover.jpg"],galleryLayout:"pair"}
+
 	];
+
 	
+
 	// Render functions
+
 function renderNav(){var nav=document.createElement("nav");nav.className="nav";var logo=document.createElement("a");logo.href="#top",logo.className="nav-logo",logo.textContent=site.name,nav.appendChild(logo);var toggle=document.createElement("button");toggle.className="nav-toggle","aria-label"in toggle&&(toggle.setAttribute("aria-label","菜单"));for(var i=0;i<3;i++){var s=document.createElement("span");toggle.appendChild(s)}toggle.onclick=function(){links.classList.toggle("open")},nav.appendChild(toggle);var links=document.createElement("ul");links.className="nav-links";for(var i=0;i<navLinks.length;i++){var li=document.createElement("li"),a=document.createElement("a");a.href=navLinks[i].href,a.textContent=navLinks[i].label,li.appendChild(a),links.appendChild(li)}return nav.appendChild(links),window.addEventListener("scroll",function(){nav.classList.toggle("scrolled",window.scrollY>40)}),nav}
+
+
 
 function renderHero(){var sec=document.createElement("section");sec.className="hero-vertical";var inner=document.createElement("div");inner.className="hero-inner";var heroContent=document.createElement("div");heroContent.className="hero-content";var h1=document.createElement("h1");h1.className="hero-name",h1.textContent=site.name,heroContent.appendChild(h1);var tag=document.createElement("p");tag.className="hero-tagline",tag.textContent=site.tagline,heroContent.appendChild(tag);var desc=document.createElement("p");desc.className="hero-desc",desc.textContent=site.desc,heroContent.appendChild(desc);var btn=document.createElement("a");btn.className="hero-btn",btn.href="#works",btn.textContent="查看作品",heroContent.appendChild(btn),inner.appendChild(heroContent);var carousel=document.createElement("div");carousel.className="mt-carousel",carousel.id="heroCarousel";var fadeL=document.createElement("div");fadeL.className="mt-fade-left";var fadeR=document.createElement("div");fadeR.className="mt-fade-right";var track=document.createElement("div");track.className="mt-track",carousel.appendChild(track),carousel.appendChild(fadeL),carousel.appendChild(fadeR),inner.appendChild(carousel),sec.appendChild(inner);var canvas=document.createElement("canvas");canvas.className="particles-canvas",canvas.setAttribute("aria-hidden","true"),sec.appendChild(canvas);return sec}
 
+
+
 function renderWorks(){var sec=document.createElement("section");sec.id="works",sec.className="section";var header=document.createElement("div");header.className="section-header";var tag=document.createElement("span");tag.className="section-tag",tag.textContent="Project Showcase",header.appendChild(tag);var h2=document.createElement("h2");h2.textContent="项目作品",header.appendChild(h2),sec.appendChild(header);var tabs=document.createElement("div");tabs.className="cat-tabs",sec.appendChild(tabs);var grid=document.createElement("div");grid.className="cards-grid",sec.appendChild(grid);return sec}
+
+
 
 function renderAbout(){var sec=document.createElement("section");sec.id="about",sec.className="section";var header=document.createElement("div");header.className="section-header";var tag=document.createElement("span");tag.className="section-tag",tag.textContent="About",header.appendChild(tag);var h2=document.createElement("h2");h2.textContent=about.heading,header.appendChild(h2),sec.appendChild(header);var content=document.createElement("div");content.className="about-content";var p=document.createElement("p");p.textContent=about.content,content.appendChild(p),sec.appendChild(content);return sec}
 
+
+
 function renderFooter(){var sec=document.createElement("footer");sec.id="footer",sec.className="footer-section";var inner=document.createElement("div");inner.className="footer-inner";var left=document.createElement("div");left.className="footer-thanks";var tag=document.createElement("span");tag.className="footer-tag",tag.textContent="Contact",left.appendChild(tag);var h2=document.createElement("h2");h2.textContent=footer.heading,left.appendChild(h2);var quote=document.createElement("p");quote.className="footer-quote",quote.textContent=footer.quote,left.appendChild(quote);var designer=document.createElement("p");designer.className="footer-designer",designer.textContent=footer.designer,left.appendChild(designer),inner.appendChild(left);var right=document.createElement("div");right.className="footer-contact";var h3=document.createElement("h3");h3.textContent="联系方式",right.appendChild(h3);var ul=document.createElement("ul");for(var i=0;i<footer.contact.length;i++){var li=document.createElement("li"),label=document.createElement("span");label.textContent=footer.contact[i].label,li.appendChild(label);var val=document.createElement("strong");val.textContent=footer.contact[i].value,li.appendChild(val),ul.appendChild(li)}right.appendChild(ul),inner.appendChild(right),sec.appendChild(inner);var copy=document.createElement("div");copy.className="footer-copy",copy.textContent="© "+new Date().getFullYear()+" "+site.name+" · AIGC 作品集",sec.appendChild(copy);return sec}
 
+
+
 // Build app
+
 var app=document.createElement("div");
+
 app.className="app";
+
 app.appendChild(renderHero());
+
 app.appendChild(renderNav());
+
 app.appendChild(renderWorks());
+
 app.appendChild(renderAbout());
+
 app.appendChild(renderFooter());
+
 root.appendChild(app);
 
+
+
 // Initialize with inline data
+
 	initWorks(works);
+
 	initCarousel(works);
+
+
 
 function initWorks(data){works=data;var sec=document.getElementById("works");if(!sec)return;var tabs=sec.querySelector(".cat-tabs"),grid=sec.querySelector(".cards-grid");tabs.innerHTML="",grid.innerHTML="";var cats=["全部"];data.forEach(function(w){w.category&&cats.indexOf(w.category)===-1&&cats.push(w.category)});var activeCat="全部";cats.forEach(function(c){var btn=document.createElement("button");btn.type="button",btn.className="cat-tab"+(c===activeCat?" active":""),btn.textContent=c,btn.onclick=function(){activeCat=c,tabs.querySelectorAll(".cat-tab").forEach(function(b){b.classList.toggle("active",b===btn)}),renderCards(data,activeCat,grid)},tabs.appendChild(btn)});renderCards(data,activeCat,grid)}
 
+
+
 function renderCards(data,cat,grid){grid.innerHTML="";var filtered=cat==="全部"?data:data.filter(function(w){return w.category===cat});if(filtered.length===0){var empty=document.createElement("div");empty.className="cat-empty",empty.textContent="该分类作品持续更新中…",grid.appendChild(empty);return}filtered.forEach(function(item,i){var card=document.createElement("div");card.className="card",card.style.animationDelay=i*.1+"s";var media=document.createElement("div");media.className="card-media";var img=document.createElement("img");img.src=item.cover||item.images&&item.images[0]||"",img.alt=item.title,img.loading="lazy",media.appendChild(img);if(item.category){var chip=document.createElement("span");chip.className="card-chip",chip.textContent=item.category,media.appendChild(chip)}var zoom=document.createElement("span");zoom.className="card-zoom",zoom.textContent="点击查看",media.appendChild(zoom),card.appendChild(media);var body=document.createElement("div");body.className="card-body";if(item.subtitle){var sub=document.createElement("span");sub.className="card-subtitle",sub.textContent=item.subtitle,body.appendChild(sub)}var h3=document.createElement("h3");h3.textContent=item.poetic||item.title,body.appendChild(h3);if(item.desc){var p=document.createElement("p");p.textContent=item.desc,body.appendChild(p)}if(item.tags&&item.tags.length>0){var tags=document.createElement("div");tags.className="card-tags",item.tags.forEach(function(t){var s=document.createElement("span");s.textContent=t,tags.appendChild(s)}),body.appendChild(tags)}card.appendChild(body),card.onclick=function(){openDetail(item)},grid.appendChild(card)})}
+
+
 
 function openDetail(item){var overlay=document.createElement("div");overlay.className="works-feature-overlay",overlay.onclick=function(){document.body.removeChild(overlay),document.body.style.overflow=""};var page=document.createElement("div");page.className="works-feature-page",page.onclick=function(e){e.stopPropagation()};var close=document.createElement("button");close.className="works-feature-close",close.innerHTML="×",close.onclick=function(){document.body.removeChild(overlay),document.body.style.overflow=""},page.appendChild(close);var title=item.poetic||item.subtitle||item.title,subtitle=item.poetic?item.subtitle||item.title:"";if(item.cover||item.images&&item.images.length){var cover=document.createElement("div");cover.className="works-feature-cover";if(item.cover){var coverMedia=document.createElement("div");coverMedia.className="works-feature-cover-media";var coverImg=document.createElement("img");coverImg.src=item.cover,coverImg.alt=item.title,coverMedia.appendChild(coverImg),cover.appendChild(coverMedia)}var coverText=document.createElement("div");coverText.className="works-feature-cover-text";if(subtitle){var eyebrow=document.createElement("span");eyebrow.className="works-feature-eyebrow",eyebrow.textContent=subtitle,coverText.appendChild(eyebrow)}var h2=document.createElement("h2");h2.className="works-feature-title",h2.textContent=title,coverText.appendChild(h2);if(item.desc){var p=document.createElement("p");p.className="works-feature-desc",p.textContent=item.desc,coverText.appendChild(p)}cover.appendChild(coverText),page.appendChild(cover)}if(item.video){var vSec=document.createElement("div");vSec.className="works-feature-video";var video=document.createElement("video");video.controls=!0,video.preload="metadata",video.poster=item.poster||item.cover||"",video.src=item.video,video.style.aspectRatio=item.videoRatio||"16/9",vSec.appendChild(video),page.appendChild(vSec)}if(item.compare){var comp=document.createElement("div");comp.className="modal-compare";var beforeFig=document.createElement("figure"),afterFig=document.createElement("figure");var beforeCap=document.createElement("figcaption");beforeCap.textContent="Before",afterFig.appendChild(beforeCap);var afterCap=document.createElement("figcaption");afterCap.textContent="After",afterFig.appendChild(afterCap);var beforeImg=document.createElement("img");beforeImg.src=item.compare.before,beforeImg.alt="Before",beforeFig.appendChild(beforeImg);var afterImg=document.createElement("img");afterImg.src=item.compare.after,afterImg.alt="After",afterFig.appendChild(afterImg);comp.appendChild(beforeFig),comp.appendChild(afterFig),page.appendChild(comp)}var images=[];if(item.images&&item.images.length)images=item.images;else if(item.compare)images=[item.compare.before,item.compare.after];if(item.image)images=[item.image];if(images.length>0){var gallery=document.createElement("div");gallery.className="works-feature-board"+(item.galleryLayout==="pair"?" works-feature-board--pair":"")+(item.galleryLayout==="octa"?" works-feature-board--octa":"")+(item.galleryLayout==="quad"?" works-feature-board--quad":"");images.forEach(function(src,i){var div=document.createElement("div");div.className="works-feature-board-item";var img=document.createElement("img");img.src=src,img.alt=item.title+" - "+(i+1),img.loading="lazy",div.appendChild(img),gallery.appendChild(div)}),page.appendChild(gallery)}var meta=document.createElement("div");meta.className="works-feature-meta";if(item.tags&&item.tags.length>0&&!item.imageGroups){var tDiv=document.createElement("div");tDiv.className="works-feature-tags",item.tags.forEach(function(t){var s=document.createElement("span");s.className="works-feature-tag",s.textContent=t,tDiv.appendChild(s)}),meta.appendChild(tDiv)}var metaGrid=document.createElement("div");metaGrid.className="works-feature-meta-grid",metaGrid.innerHTML='<div class="works-feature-meta-item"><span class="meta-label">方向</span><span class="meta-value">AI 视觉设计</span></div><div class="works-feature-meta-item"><span class="meta-label">分类</span><span class="meta-value">'+(item.category||"作品")+'</span></div><div class="works-feature-meta-item"><span class="meta-label">素材</span><span class="meta-value">'+(images.length+(item.video?1:0))+' 项</span></div>',meta.appendChild(metaGrid),page.appendChild(meta),overlay.appendChild(page),document.body.appendChild(overlay),document.body.style.overflow="hidden"}
 
+
+
 function initCarousel(data){var track=document.querySelector("#heroCarousel .mt-track");if(!track||data.length===0)return;track.innerHTML="";var items=data.concat(data);items.forEach(function(item,i){var card=document.createElement("div");card.className="mt-card";var imgDiv=document.createElement("div");imgDiv.className="mt-card-img";var img=document.createElement("img");img.src=item.cover||item.images&&item.images[0]||"",img.alt=item.title,img.loading="lazy",imgDiv.appendChild(img),card.appendChild(imgDiv);var title=document.createElement("div");title.className="mt-card-title",title.textContent=item.poetic||item.title,card.appendChild(title);if(item.category){var tag=document.createElement("span");tag.className="mt-card-tag",tag.textContent=item.category,tag.style.background=tagPalette[i%tagPalette.length],card.appendChild(tag)}card.onclick=function(){openDetail(item)},track.appendChild(card)})}
 
+
+
 // Initialize particles canvas
-(function(){var c=document.querySelector(".particles-canvas");if(!c)return;var ctx=c.getContext("2d");if(!ctx)return;var w,h,anim;function resize(){w=c.width=window.innerWidth,h=c.height=window.innerHeight}window.addEventListener("resize",resize),resize();var colors=[{r:218,g:109,b:108},{r:255,g:183,b:178},{r:181,g:213,b:243},{r:199,g:178,b:230},{r:255,g:223,b:163},{r:158,g:224,b:213}];var particles=[];for(var i=0;i<28;i++){particles.push({x:Math.random()*w,y:Math.random()*h,z:Math.random()*.8+.2,r:(7+Math.random()*14)*(Math.random()*.8+.2),vx:(Math.random()-.5)*.35,vy:-(.15+Math.random()*.25)*(.6+.4*(Math.random()*.8+.2)),color:colors[Math.floor(Math.random()*colors.length)],alpha:.22+Math.random()*.18,pulseSpeed:.001+Math.random()*.002,pulseOffset:Math.random()*Math.PI*2,wobble:Math.random()*Math.PI*2,wobbleSpeed:5e-4+Math.random()*.001})}function draw(t){ctx.clearRect(0,0,w,h),particles.sort(function(a,b){return a.z-b.z});for(var i=0;i<particles.length;i++){var p=particles[i];p.x+=p.vx+Math.sin(p.wobble+t*p.wobbleSpeed)*.15,p.y+=p.vy,p.wobble+=p.wobbleSpeed;if(p.y<-60)p.y=h+60;if(p.x<-60)p.x=w+60;if(p.x>w+60)p.x=-60;var pulse=1+Math.sin(t*p.pulseSpeed+p.pulseOffset)*.12,radius=p.r*pulse;var grad=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,radius*2.6);grad.addColorStop(0,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha*.9+")"),grad.addColorStop(.45,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha*.35+")"),grad.addColorStop(1,"rgba("+p.color.r+","+p.color.g+","+p.color.b+",0)"),ctx.fillStyle=grad,ctx.beginPath(),ctx.arc(p.x,p.y,radius*2.6,0,Math.PI*2),ctx.fill();var core=ctx.createRadialGradient(p.x-radius*.25,p.y-radius*.25,radius*.1,p.x,p.y,radius);core.addColorStop(0,"rgba(255,255,255,"+(.55+p.alpha)+")"),core.addColorStop(.5,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha+")"),core.addColorStop(1,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha*.25+")"),ctx.fillStyle=core,ctx.beginPath(),ctx.arc(p.x,p.y,radius,0,Math.PI*2),ctx.fill()}anim=requestAnimationFrame(draw)}draw(performance.now());window.addEventListener("beforeunload",function(){cancelAnimationFrame(anim)})})();
+
+(function(){var c=document.querySelector(".particles-canvas");if(!c)return;var ctx=c.getContext("2d");if(!ctx)return;var w,h,anim;function resize(){w=c.width=window.innerWidth,h=c.height=window.innerHeight}window.addEventListener("resize",resize),resize();var colors=[{r:218,g:109,b:108},{r:255,g:183,b:178},{r:181,g:213,b:243},{r:199,g:178,b:230},{r:255,g:223,b:163},{r:158,g:224,b:213}];var particles=[];for(var i=0;i<28;i++){particles.push({x:Math.random()*w,y:Math.random()*h,z:Math.random()*.8+.2,r:(7+Math.random()*14)*(Math.random()*.8+.2),vx:(Math.random()-.5)*.35,vy:-(.15+Math.random()*.25)*(.6+.4*(Math.random()*.8+.2)),color:colors[Math.floor(Math.random()*colors.length)],alpha:.22+Math.random()*.18,pulseSpeed:.001+Math.random()*.002,pulseOffset:Math.random()*Math.PI*2,wobble:Math.random()*Math.PI*2,wobbleSpeed:5e-4+Math.random()*.001})}function draw(t){ctx.clearRect(0,0,w,h),particles.sort(function(a,b){return a.z-b.z});for(var i=0;i<particles.length;i++){var p=particles[i];p.x+=p.vx+Math.sin(p.wobble+t*p.wobbleSpeed)*.15,p.y+=p.vy,p.wobble+=p.wobbleSpeed;if(p.y<-60)p.y=h+60;if(p.x<-60)p.x=w+60;if(p.x>w+60)p.x=-60;var pulse=1+Math.sin(t*p.pulseSpeed+p.pulseOffset)*.12,radius=p.r*pulse;var grad=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,radius*2.6);grad.addColorStop(0,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha*.9+")"),grad.addColorStop(.45,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha*.35+")"),grad.addColorStop(1,"rgba("+p.color.r+","+p.color.g+","+p.color.b+",0)"),ctx.fillStyle=grad,ctx.beginPath(),ctx.arc(p.x,p.y,radius*2.6,0,Math.PI*2),ctx.fill();var core=ctx.createRadialGradient(p.x-radius*.25,p.y-radius*.25,radius*.1,p.x,p.y,radius);core.addColorStop(0,"rgba(255,255,255,"+(.55+p.alpha)+")"),core.addColorStop(.5,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha+")"),core.addColorStop(1,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha*.25+")"),ctx.fillStyle=core,ctx.beginPath(),ctx.arc(p.x,p.y,radius,0,Math.PI*2),ctx.fill()}anim=requestAnimationFrame(draw)}draw(performance.now());window.addEventListener("beforeunload",function(){cancelAnimationFrame(anim)})})();})();
+
 </script>
 
+
+
 <script>
+
 // Unregister old service workers that cache the old React version
+
 if ('serviceWorker' in navigator) {
+
   navigator.serviceWorker.getRegistrations().then(function(registrations) {
+
     for (var r of registrations) { r.unregister(); }
+
   });
+
 }
+
 </script>
+
 </body>
+
 </html>
