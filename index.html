@@ -85,5 +85,14 @@ function initCarousel(data){var track=document.querySelector("#heroCarousel .mt-
 // Initialize particles canvas
 (function(){var c=document.querySelector(".particles-canvas");if(!c)return;var ctx=c.getContext("2d");if(!ctx)return;var w,h,anim;function resize(){w=c.width=window.innerWidth,h=c.height=window.innerHeight}window.addEventListener("resize",resize),resize();var colors=[{r:218,g:109,b:108},{r:255,g:183,b:178},{r:181,g:213,b:243},{r:199,g:178,b:230},{r:255,g:223,b:163},{r:158,g:224,b:213}];var particles=[];for(var i=0;i<28;i++){particles.push({x:Math.random()*w,y:Math.random()*h,z:Math.random()*.8+.2,r:(7+Math.random()*14)*(Math.random()*.8+.2),vx:(Math.random()-.5)*.35,vy:-(.15+Math.random()*.25)*(.6+.4*(Math.random()*.8+.2)),color:colors[Math.floor(Math.random()*colors.length)],alpha:.22+Math.random()*.18,pulseSpeed:.001+Math.random()*.002,pulseOffset:Math.random()*Math.PI*2,wobble:Math.random()*Math.PI*2,wobbleSpeed:5e-4+Math.random()*.001})}function draw(t){ctx.clearRect(0,0,w,h),particles.sort(function(a,b){return a.z-b.z});for(var i=0;i<particles.length;i++){var p=particles[i];p.x+=p.vx+Math.sin(p.wobble+t*p.wobbleSpeed)*.15,p.y+=p.vy,p.wobble+=p.wobbleSpeed;if(p.y<-60)p.y=h+60;if(p.x<-60)p.x=w+60;if(p.x>w+60)p.x=-60;var pulse=1+Math.sin(t*p.pulseSpeed+p.pulseOffset)*.12,radius=p.r*pulse;var grad=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,radius*2.6);grad.addColorStop(0,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha*.9+")"),grad.addColorStop(.45,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha*.35+")"),grad.addColorStop(1,"rgba("+p.color.r+","+p.color.g+","+p.color.b+",0)"),ctx.fillStyle=grad,ctx.beginPath(),ctx.arc(p.x,p.y,radius*2.6,0,Math.PI*2),ctx.fill();var core=ctx.createRadialGradient(p.x-radius*.25,p.y-radius*.25,radius*.1,p.x,p.y,radius);core.addColorStop(0,"rgba(255,255,255,"+(.55+p.alpha)+")"),core.addColorStop(.5,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha+")"),core.addColorStop(1,"rgba("+p.color.r+","+p.color.g+","+p.color.b+","+p.alpha*.25+")"),ctx.fillStyle=core,ctx.beginPath(),ctx.arc(p.x,p.y,radius,0,Math.PI*2),ctx.fill()}anim=requestAnimationFrame(draw)}draw(performance.now());window.addEventListener("beforeunload",function(){cancelAnimationFrame(anim)})})();
 </script>
+
+<script>
+// Unregister old service workers that cache the old React version
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    for (var r of registrations) { r.unregister(); }
+  });
+}
+</script>
 </body>
 </html>
